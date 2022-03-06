@@ -1,6 +1,6 @@
 import {useDrawerProgress} from '@react-navigation/drawer';
 import React, {useEffect, useRef} from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
 import {
   TouchableOpacity,
   TouchableWithoutFeedback,
@@ -70,12 +70,6 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
           animated: false,
         });
         break;
-      case constants.screens.search:
-        flatListRef?.current?.scrollToIndex({
-          index: 1,
-          animated: false,
-        });
-        break;
       case constants.screens.cart:
         flatListRef?.current?.scrollToIndex({
           index: 2,
@@ -108,13 +102,6 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
         ...animatedStyle,
       }}>
       <Header
-        containerStyle={{
-          height: 50,
-          paddingHorizontal: SIZES.padding,
-          marginTop: 20,
-          alignItems: 'center',
-        }}
-        title={selectedTab.toUpperCase()}
         leftComponent={
           <TouchableOpacity
             onPress={() => navigation.openDrawer()}
@@ -144,42 +131,42 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
           </TouchableOpacity>
         }
       />
-      <View style={{flex: 1}}>
-        <FlatList
-          ref={flatListRef}
-          horizontal
-          scrollEnabled={false}
-          pagingEnabled
-          snapToAlignment="center"
-          snapToInterval={SIZES.width}
-          showsHorizontalScrollIndicator={false}
-          data={constants.bottom_tabs}
-          keyExtractor={item => `${item.id}`}
-          renderItem={({item, index}) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  height: SIZES.height,
-                  width: SIZES.width,
-                }}>
-                {item.label === constants.screens.home && (
-                  <Home navigation={navigation} />
-                )}
-                {item.label === constants.screens.search && (
-                  <Search navigation={navigation} />
-                )}
-                {item.label === constants.screens.cart && (
-                  <Cart navigation={navigation} />
-                )}
-                {item.label === constants.screens.favorite && (
-                  <Favorite navigation={navigation} />
-                )}
-              </View>
-            );
-          }}
-        />
-      </View>
+      <ScrollView>
+        <View style={{flex: 1}}>
+          <FlatList
+            ref={flatListRef}
+            horizontal
+            scrollEnabled={false}
+            pagingEnabled
+            snapToAlignment="center"
+            snapToInterval={SIZES.width}
+            showsHorizontalScrollIndicator={false}
+            data={constants.bottom_tabs}
+            keyExtractor={item => `${item.id}`}
+            renderItem={({item, index}) => {
+              return (
+                <View
+                  key={index}
+                  style={{
+                    paddingVertical: SIZES.base,
+                    width: SIZES.width,
+                  }}>
+                  {item.label === constants.screens.home && (
+                    <Home navigation={navigation} />
+                  )}
+
+                  {item.label === constants.screens.cart && (
+                    <Cart navigation={navigation} />
+                  )}
+                  {item.label === constants.screens.favorite && (
+                    <Favorite navigation={navigation} />
+                  )}
+                </View>
+              );
+            }}
+          />
+        </View>
+      </ScrollView>
 
       <View
         style={{
@@ -230,23 +217,6 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
           />
 
           <TabButton
-            label={constants.screens.search}
-            icon={
-              <Icon
-                name="search"
-                size={20}
-                color={
-                  selectedTab === constants.screens.search
-                    ? COLORS.darkGray
-                    : COLORS.gray
-                }
-              />
-            }
-            isFocused={selectedTab === constants.screens.search}
-            onPress={() => setActivatedTab(constants.screens.search)}
-          />
-
-          <TabButton
             label={constants.screens.cart}
             icon={
               <Icon
@@ -261,40 +231,6 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
             }
             isFocused={selectedTab === constants.screens.cart}
             onPress={() => setActivatedTab(constants.screens.cart)}
-          />
-
-          <TabButton
-            label={constants.screens.favorite}
-            icon={
-              <Icon
-                name="bookmark"
-                size={20}
-                color={
-                  selectedTab === constants.screens.favorite
-                    ? COLORS.darkGray
-                    : COLORS.gray
-                }
-              />
-            }
-            isFocused={selectedTab === constants.screens.favorite}
-            onPress={() => setActivatedTab(constants.screens.favorite)}
-          />
-
-          <TabButton
-            label={constants.screens.notification}
-            icon={
-              <Icon
-                name="ios-notifications"
-                size={20}
-                color={
-                  selectedTab === constants.screens.notification
-                    ? COLORS.darkGray
-                    : COLORS.gray
-                }
-              />
-            }
-            isFocused={selectedTab === constants.screens.notification}
-            onPress={() => setActivatedTab(constants.screens.notification)}
           />
         </View>
       </View>

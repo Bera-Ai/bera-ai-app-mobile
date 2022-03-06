@@ -41,14 +41,14 @@ export const Home = ({navigation}) => {
             <HorizontalBeerCard
               containerStyle={{
                 flex: 1,
-                alignItems: 'center',
+
                 marginHorizontal: SIZES.padding,
                 marginBottom: SIZES.radius,
               }}
               imageStyle={{
-                marginTop: 20,
                 height: 110,
                 width: 110,
+                borderRadius: SIZES.radius,
               }}
               item={item}
               onPress={() => console.log('HorizontalBeerCard')}

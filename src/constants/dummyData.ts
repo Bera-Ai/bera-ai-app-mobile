@@ -23,37 +23,58 @@ const categories = [
 ];
 
 const hamburger = {
-  id: 1,
-  name: 'Hamburger',
-  description: 'Chicken patty hamburger',
+  id: 8,
+  name: 'Old Car Brewpub',
+  description:
+    'Loja especializada em cervejas especiais, com a proposta de trazer qualidade e variedade com espaço pra degustação.',
   categories: [1, 2],
   price: 15.99,
   calories: 78,
+  reviews: 124,
+  rotulos: 25,
   isFavourite: true,
-  image: require('../assets/dummyData/hamburger.png'),
+  image: require('../assets/dummyData/old-car.jpg'),
+};
+
+const hamburger2 = {
+  id: 1,
+  name: 'Bodebrown',
+  description:
+    'A Bodebrown® foi fundada em 2009 por nosso mestre louco e descabelado Samuel Cavalcanti.',
+  categories: [1, 2],
+  price: 15.99,
+  calories: 78,
+  reviews: 54,
+  rotulos: 30,
+  isFavourite: true,
+  image: require('../assets/dummyData/bodebrown.jpg'),
 };
 
 const hotTacos = {
   id: 2,
-  name: 'Hot Tacos',
-  description: 'Mexican tortilla & tacos',
+  name: 'Way Beer',
+  description: 'A Way Beer é uma cervejaria artesanal do Paraná',
   categories: [1, 3],
   price: 10.99,
   calories: 78,
+  reviews: 89,
+  rotulos: 19,
   isFavourite: false,
-  image: require('../assets/dummyData/hot_tacos.png'),
+  image: require('../assets/dummyData/way_beer.jpg'),
 };
 
 const vegBiryani = {
   id: 3,
-  name: 'Veg Biryani',
+  name: 'Maniacs Brewing',
   description:
-    'A popular spice and vegetables mixed favoured rice dish which is typically prepared by layering the biryani gravy and basmati rice in flat bottom vessel.',
+    'Cerveja artesanal curitibana. Feita por Loucos por Cerveja, para Loucos por Cerveja',
   categories: [1, 2, 3],
   price: 10.99,
   calories: 78,
+  reviews: 100,
+  rotulos: 8,
   isFavourite: true,
-  image: require('../assets/dummyData/veg_biryani.png'),
+  image: require('../assets/dummyData/meniacs.png'),
 };
 
 const wrapSandwich = {
@@ -71,7 +92,7 @@ const menu = [
   {
     id: 1,
     name: 'Featured',
-    list: [hamburger, hotTacos, vegBiryani],
+    list: [hamburger, hamburger2, hotTacos, vegBiryani],
   },
   {
     id: 2,
