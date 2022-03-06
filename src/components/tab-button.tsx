@@ -50,7 +50,7 @@ export const TabButton = ({label, icon, isFocused, onPress}) => {
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
-            height: 60,
+            height: 70,
             borderRadius: SIZES.padding * 2,
             backgroundColor: isFocused ? COLORS.primary : COLORS.white,
           }}>

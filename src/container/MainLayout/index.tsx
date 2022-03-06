@@ -170,7 +170,7 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
 
       <View
         style={{
-          height: 100,
+          height: 80,
           justifyContent: 'flex-end',
         }}>
         <LinearGradient
@@ -182,7 +182,7 @@ const MainLayout = ({selectedTab, setSelectedTab, navigation, ...props}) => {
             top: -20,
             left: 0,
             right: 0,
-            height: 100,
+            height: 80,
             borderTopLeftRadius: 15,
             borderTopRightRadius: 15,
           }}
