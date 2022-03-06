@@ -83,7 +83,7 @@ const DrawerContentCustom = ({navigation, selectedTab, setSelectedTab}) => {
               {dummyData.myProfile?.name}
             </Text>
             <Text style={{color: COLORS.darkBlue, ...FONTS.body5}}>
-              View your profile
+              Ver seu Perfil
             </Text>
           </View>
         </TouchableOpacity>
@@ -97,24 +97,10 @@ const DrawerContentCustom = ({navigation, selectedTab, setSelectedTab}) => {
           />
 
           <CustomDrawerItem
-            label={constants.screens.my_wallet}
-            icon={<Icon name="wallet" size={20} color={COLORS.darkBlue} />}
-            isFocused={selectedTab === constants.screens.my_wallet}
-            onPress={() => setActivatedTab(constants.screens.my_wallet)}
-          />
-
-          <CustomDrawerItem
-            label={'My Orders'}
+            label={'Meus Pedidos'}
             icon={<Icon name="cart" size={20} color={COLORS.darkBlue} />}
             isFocused={selectedTab === 'My Orders'}
             onPress={() => setActivatedTab('My Orders')}
-          />
-
-          <CustomDrawerItem
-            label={constants.screens.favorite}
-            icon={<Icon name="bookmark" size={20} color={COLORS.darkBlue} />}
-            isFocused={selectedTab === constants.screens.favorite}
-            onPress={() => setActivatedTab(constants.screens.favorite)}
           />
 
           <View
@@ -124,13 +110,6 @@ const DrawerContentCustom = ({navigation, selectedTab, setSelectedTab}) => {
               marginLeft: SIZES.radius,
               backgroundColor: COLORS.darkGray2,
             }}
-          />
-
-          <CustomDrawerItem
-            label={'Track your order'}
-            icon={<Icon name="location" size={20} color={COLORS.darkBlue} />}
-            isFocused={selectedTab === 'Track your order'}
-            onPress={() => setActivatedTab('Track your order')}
           />
 
           <CustomDrawerItem
@@ -147,7 +126,7 @@ const DrawerContentCustom = ({navigation, selectedTab, setSelectedTab}) => {
           />
 
           <CustomDrawerItem
-            label={'Settings'}
+            label={'Configurações'}
             icon={<Icon name="settings" size={20} color={COLORS.darkBlue} />}
             isFocused={selectedTab === 'Settings'}
             onPress={() => setActivatedTab('Settings')}
@@ -159,19 +138,13 @@ const DrawerContentCustom = ({navigation, selectedTab, setSelectedTab}) => {
             marginBottom: SIZES.padding,
           }}>
           <CustomDrawerItem
-            label={'Invite a friend'}
-            icon={<Icon name="person-add" size={20} color={COLORS.darkBlue} />}
-            isFocused={selectedTab === 'Invite a friend'}
-            onPress={() => setActivatedTab('Invite a friend')}
-          />
-          <CustomDrawerItem
-            label={'Help Center'}
+            label={'Preciso de ajuda'}
             icon={<Icon name="help-buoy" size={20} color={COLORS.darkBlue} />}
             isFocused={selectedTab === 'Help Center'}
             onPress={() => setActivatedTab('Help Center')}
           />
           <CustomDrawerItem
-            label={'Logout'}
+            label={'Sair da Conta'}
             icon={<Icon name="log-out" size={20} color={COLORS.darkBlue} />}
             isFocused={selectedTab === 'Logout'}
             onPress={() => setActivatedTab('Logout')}

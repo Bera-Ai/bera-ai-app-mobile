@@ -27,8 +27,8 @@ const onboarding_screens = [
 
 const screens = {
   main_layout: 'MainLayout',
-  home: 'Home',
-  cart: 'Cart',
+  home: 'Pub',
+  cart: 'Carrinho',
   favorite: 'Favourite',
   notification: 'Notification',
   my_wallet: 'My Wallet',
